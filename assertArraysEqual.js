@@ -21,13 +21,12 @@ const eqArrays = function(arr1, arr2) {
     //console.log(passOrFail, arr1[i], arr2[i]);
   }
   if (passOrFail) {
-    //console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
-    return true;
+    console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
+    //return true;
   } else {
-    //console.log(`🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-    return false;
+    console.log(`🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+    //return false;
   }
-  
 };
 
 // TEST CODE
@@ -36,5 +35,3 @@ eqArrays([1, 2, 3], [3, 2, 1]); // => false
 
 eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
-
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
