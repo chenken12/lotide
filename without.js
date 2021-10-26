@@ -29,8 +29,8 @@ const assertArraysEqual = function(arr1, arr2) {
 
 const without = function(arr1w, arr2w) {
   let newArr = arr1w.slice(); //need slice to copy
-  for (let i = newArr.length-1; i >= 0; i--) {
-    for(let j = 0; j < arr2w.length; j++){
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    for (let j = 0; j < arr2w.length; j++) {
       if (assertEqual(newArr[i], arr2w[j])) {
         newArr.splice(i, 1);
       }
