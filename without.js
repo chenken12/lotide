@@ -1,4 +1,3 @@
-// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     //console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
@@ -22,16 +21,26 @@ const assertArraysEqual = function(arr1, arr2) {
   }
   if (passOrFail) {
     console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
-    //return true;
+
   } else {
     console.log(`🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-    //return false;
   }
 };
 
-// TEST CODE
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
+const without = function(arr1w, arr2w) {
+  let newArr = arr1w.slice(); //need slice to copy
+  for (let i = newArr.length-1; i >= 0; i--) {
+    for(let j = 0; j < arr2w.length; j++){
+      if (assertEqual(newArr[i], arr2w[j])) {
+        newArr.splice(i, 1);
+      }
+    }
+  }
+  //console.log(newArr);
+  return newArr;
+};
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
