@@ -14,7 +14,7 @@ const assertArraysEqual = function(arr1, arr2) {
   let passOrFail = (arr1.length === arr2.length ? true : false);
 
   for (let i = 0; i < arr1.length; i++) {
-    passOrFail = assertEqual(arr1[i], arr2[i]);
+    passOrFail = (arr1[i] === arr2[i]);
     if (!passOrFail) {
       break;
     }

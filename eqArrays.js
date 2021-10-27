@@ -18,7 +18,6 @@ const eqArrays = function(arr1, arr2) {
     if (!passOrFail) {
       break;
     }
-    //console.log(passOrFail, arr1[i], arr2[i]);
   }
   if (passOrFail) {
     //console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
