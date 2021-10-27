@@ -7,7 +7,7 @@ const flatten = function(arr) {
       }
     } else {
       newArr.push(arr[i]);
-    } 
+    }
   }
   arr = newArr.slice();
   //console.log(arr);
