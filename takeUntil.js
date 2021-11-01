@@ -23,12 +23,12 @@ const takeUntil = function(array, callback) {
   for (let item of array) {
     if (!callback(item)) {
       results.push(item);
-    } else{
+    } else {
       break;
     }
   }
   return results;
-}
+};
 
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
