@@ -1,13 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-  //console.assert(actual ===  expected, actual + " !== " + expected);
-};
-
-
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
@@ -34,19 +24,20 @@ const eqObjects = function(object1, object2) {
       pass = false;
     }
   }
+  
 
   //return true or false for the results
   if (!pass) {
-    //console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
     return false;
   } else {
-    //console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
     return true;
   }
 
 };
 
+module.exports = eqObjects;
 
+/*
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 let a = eqObjects(ab, ba); // => true
@@ -72,3 +63,4 @@ let f = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => fal
 let g = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
 console.log(f);
 console.log(g);
+*/
