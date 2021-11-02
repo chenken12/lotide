@@ -1,18 +1,28 @@
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays.js');
-const assertEqual = require('../assertEqual.js');
 
-// TEST CODE
-let t1 = eqArrays([1, 2, 3], [1, 2, 3]); // => true
-let t2 = eqArrays([1, 2, 3], [3, 2, 1]); // => false
-console.log(`t1: ${t1} t2: ${t2}`);
+describe("#eqArrays", () => {
+  it("returns true where comparing array [1, 2, 3] with [1, 2, 3]", () => {
+    assert.isTrue(eqArrays([1, 2, 3], [1, 2, 3]));
+  });
+  it("returns false where comparing array [1, 2, 3], [3, 2, 1]", () => {
+    assert.isFalse(eqArrays([1, 2, 3], [3, 2, 1]));
+  });
 
-let t3 = eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-let t4 = eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
-console.log(`t3: ${t3} t4: ${t4}`);
+  it("returns true where comparing array ['1', '2', '3'] with ['1', '2', '3']", () => {
+    assert.isTrue(eqArrays(["1", "2", "3"], ["1", "2", "3"]));
+  });
+  it("returns false where comparing array ['1', '2', '3'], ['1', '2', 3]", () => {
+    assert.isFalse(eqArrays(["1", "2", "3"], ["1", "2", 3]));
+  });
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-
-let a = eqArrays([[2, 3], [4]], [[2, 3], [4]]); // => true
-let b = eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]); // => false
-let c = eqArrays([[2, 3], [4]], [[2, 3], 4]); // => false
-console.log(`a: ${a} b: ${b} c: ${c}`);
+  it("returns true where comparing array [[2, 3], [4]] with [[2, 3], [4]]", () => {
+    assert.isTrue(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
+  });
+  it("returns false where comparing array [[2, 3], [4]] with [[2, 3], [4, 5]]", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+  });
+  it("returns false where comparing array [[2, 3], [4]] with [[2, 3], 4]", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], 4]));
+  });
+});

@@ -36,31 +36,3 @@ const eqObjects = function(object1, object2) {
 };
 
 module.exports = eqObjects;
-
-/*
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-let a = eqObjects(ab, ba); // => true
-console.log(a);
-
-const abc = { a: "1", b: "2", c: "3" };
-let b = eqObjects(ab, abc); // => false
-console.log(b);
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-let c = eqObjects(cd, dc); // => true
-console.log(c);
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-let d = eqObjects(cd, cd2); // => false
-console.log(d);
-
-let e = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
-console.log(e);
-
-let f = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
-let g = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
-console.log(f);
-console.log(g);
-*/

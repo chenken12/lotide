@@ -1,24 +1,3 @@
-const assertArraysEqual = function(arr1, arr2) {
-  //check if is the same length
-  let passOrFail = (arr1.length === arr2.length ? true : false);
-
-  //check the index of both array
-  for (let i = 0; i < arr1.length; i++) {
-    passOrFail = (arr1[i] === arr2[i]);
-    if (!passOrFail) {
-      break;
-    }
-  }
-  //print statment
-  if (passOrFail) {
-    console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
-    //return true;
-  } else {
-    console.log(`🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-    //return false;
-  }
-};
-
 const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
@@ -30,9 +9,8 @@ const letterPositions = function(sentence) {
       results[sentence[i]] = [i];
     }
   }
-  console.log(results);
+  //console.log(results);
   return results;
 };
 
-letterPositions("lighthouse in the house");
-assertArraysEqual(letterPositions("hello").e, [1]);
+module.exports = letterPositions;
